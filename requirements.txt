@@ -3,3 +3,4 @@ torch==1.1.0
 torchvision
 beautifulsoup4==4.7.1
 tqdm==4.32.1
+keras==2.2.4
