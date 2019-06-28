@@ -2,6 +2,7 @@ import os
 from bs4 import BeautifulSoup
 import urllib.request
 import subprocess
+
 from tqdm import tqdm
 
 
@@ -26,10 +27,11 @@ def download_files(links, output_dir):
     for url in tqdm(links, 'Downloading...'):
         filename = url.split("/")[-1]
         file_path = os.path.join(output_dir, filename)
-        subprocess.run(["wget", "-O", file_path, url])
-
+        # subprocess.run(["wget", "-O", file_path, url])
+        subprocess.run(["curl", url, "--output", file_path])
 
 if __name__ == '__main__':
+
     url = "http://storage.googleapis.com/books/ngrams/books/datasetsv2.html"
     links = scrap_download_links(url)[21:22]
-    download_files(links, output_dir='data')
+    download_files(links, output_dir='./data')
