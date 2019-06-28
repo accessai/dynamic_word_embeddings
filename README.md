@@ -10,7 +10,12 @@ python -m preprocess_data
 
 #### Training
 ```
-python -m main
+python -m main --data_dir=./data \
+               --embed_dim=100 \
+               --batch_size=1000 \
+               --lr=0.001 \
+               --epochs=5 \
+               --device=cpu
 ```
 
 # References:

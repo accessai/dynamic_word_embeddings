@@ -5,7 +5,7 @@ import torch.nn.functional as F
 
 class SkipGramModel(nn.Module):
 
-    def __init__(self, l=30000, m=40):
+    def __init__(self, l=10000, m=40):
         """Skip Gram model
 
         :param l: vocabulary size
