@@ -4,10 +4,9 @@ from torch import nn
 
 class Trainer(object):
 
-    def __init__(self, model, data_loader):
+    def __init__(self, model, data_loader, device):
         self.data_loader = data_loader
-        self.device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-        # self.device = 'cpu'
+        self.device = device
         self.model = model.to(self.device)
 
     def train(self, epochs, lr):

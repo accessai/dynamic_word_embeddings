@@ -30,7 +30,7 @@ data_loader = torch.utils.data.DataLoader(dataset=skip_gram_dataset,
                                           shuffle=True)
 
 model = SkipGramModel(skip_gram_dataset.vocab_length,m=embed_dim)
-trainer = Trainer(model, data_loader)
+trainer = Trainer(model, data_loader, device)
 model = trainer.train(epochs=epochs, lr=learning_rate)
 
 torch.save(model, 'model.ckpt')
