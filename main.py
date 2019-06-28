@@ -25,6 +25,7 @@ learning_rate = args.lr
 device = 'cpu' if args.device == 'cpu' else torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 skip_gram_dataset = SkipGramDataSet(train_data_path, vocab_path=vocab_path)
+print('Training samples: {}'.format(skip_gram_dataset.length))
 data_loader = torch.utils.data.DataLoader(dataset=skip_gram_dataset,
                                           batch_size=batch_size,
                                           shuffle=True)
